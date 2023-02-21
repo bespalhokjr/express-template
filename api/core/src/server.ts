@@ -23,6 +23,10 @@ app.get('/', function(req:any, res:any){
   res.send('Hello!');
 });
 
+app.get('/testando', function(req:any, res:any){
+  res.send('Opa!');
+});
+
 app.get('/users', function(req:any, res:any){
   res.send(users);
 });
@@ -31,6 +35,8 @@ app.get('/users/:userId', function(req:any, res:any){
   const user = users.filter((user) => user.id == req.params.userId);
   res.send(user);
 });
+
+
 
 if (!module.parent) {
   app.listen(3000);
